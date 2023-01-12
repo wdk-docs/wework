@@ -1,0 +1,40 @@
+nav:
+  - 首页:
+      - index.md
+      - quick-start.md
+      - provider-create-app.md
+      - developer-create-app.md
+      - release-notes.md
+      - contact-us.md
+  - 服务端:
+      - server/index.md
+      - 开发指南: server/dev-guide/
+      - 基础:
+          - server/basic/index.md
+          - 应用授权:
+              - server/basic/application-authorization/index.md
+              - server/basic/application-authorization/enterprise-authorized-application.md
+              - server/basic/application-authorization/member-authorization-application.md
+              - server/basic/application-authorization/address-book-authority-system.md
+              - 接口调用:
+                  - server/basic/application-authorization/interface-call/index.md
+                  - server/basic/application-authorization/interface-call/get-the-pre-authorization-code.md
+                  - server/basic/application-authorization/interface-call/obtain-an-enterprise-permanent-authorization-code.md
+                  - server/basic/application-authorization/interface-call/obtain-enterprise-certificate.md
+              - 回调通知:
+                  - server/basic/application-authorization/callback-notification/index.md
+                  - server/basic/application-authorization/callback-notification/authorized-notification-event.md
+          - 接受消息:
+              - server/basic/message-push/index.md
+              - 接收消息与事件:
+                  - server/basic/message-push/receive-messages-and-events/index.md
+      - 连接微信: server/wechat/
+      - 办公: server/office/
+      - 智慧硬件: server/iot/
+  - 客户端:
+      - client/index.md
+      - 小程序: client/weapp/
+      - jssdk: client/jssdk/
+  - 运营规范: operation/
+  - 附录: appendix/
+  - 资源: resources/

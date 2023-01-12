@@ -1,0 +1,115 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: 第三方应用接口
+servers:
+  - url: https://qyapi.weixin.qq.com/cgi-bin
+paths:
+  /service/get_suite_token:
+    post:
+      summary: 获取第三方应用凭证(suite_access_token)
+      operationId: get_suite_token
+      tags:
+        - get_suite_token
+      parameters:
+        - name: suite_id
+          description: 以ww或wx开头应用id(旧的以tj开头的套件id）
+          required: true
+          schema:
+            type: string
+        - name: suite_secret
+          description: 应用secret
+          required: true
+          schema:
+            type: string
+        - name: suite_ticket
+          description: 企业微信后台推送的ticket
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: 第三方应用凭证
+          headers:
+            x-next:
+              description: A link to the next page of responses
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    get:
+      summary: Create a pet
+      operationId: createPets
+      tags:
+        - pets
+      responses:
+        201:
+          description: Null response
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /pets/{petId}:
+    get:
+      summary: Info for a specific pet
+      operationId: showPetById
+      tags:
+        - pets
+      parameters:
+        - name: petId
+          in: path
+          required: true
+          description: The id of the pet to retrieve
+          schema:
+            type: string
+      responses:
+        200:
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Pet:
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        tag:
+          type: string
+    Pets:
+      type: array
+      items:
+        $ref: "#/components/schemas/Pet"
+    Error:
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
