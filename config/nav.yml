@@ -8,6 +8,7 @@ nav:
       - contact-us.md
   - 服务端:
       - server/index.md
+      - server/api.md
       - 开发指南: server/dev-guide/
       - 基础:
           - server/basic/index.md
@@ -24,6 +25,8 @@ nav:
               - 回调通知:
                   - server/basic/application-authorization/callback-notification/index.md
                   - server/basic/application-authorization/callback-notification/authorized-notification-event.md
+          - 接口调用许可:
+              - server/basic/interface-call-license/index.md
           - 接受消息:
               - server/basic/message-push/index.md
               - 接收消息与事件:

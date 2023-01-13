@@ -20,6 +20,7 @@ theme:
   name: material
   language: zh
   # custom_dir: material/.overrides
+  logo: assets/logo/logo-small.png
   features:
     # - announce.dismiss
     - content.code.annotate
@@ -57,7 +58,7 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/favicon.png
+  favicon: assets/favicon/favicon.ico
   icon:
     logo: logo
 
